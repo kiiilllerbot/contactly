@@ -1,2 +1,258 @@
-<h1>Contacts#index</h1>
-<p>Find me in app/views/contacts/index.html.erb</p>
+<div class="row justify-content-center mt-3">
+  <div class="col-lg-3">
+		<div class="card">
+			<div class="card-header">
+				Featured
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item d-flex align-items-center justify-content-between">
+					<span>Family</span>
+				 	<span class="badge bg-dark rounded-pill">10</span>
+				</li>
+				<li class="list-group-item d-flex align-items-center justify-content-between">
+					<span>Friends</span>
+				 	<span class="badge bg-dark rounded-pill">10</span>
+				</li>
+				<li class="list-group-item d-flex align-items-center justify-content-between">
+					<span>Clients</span>
+				 	<span class="badge bg-dark rounded-pill">10</span>
+				</li>
+				<li class="list-group-item d-flex align-items-center justify-content-between">
+					<span>Collegues</span>
+				 	<span class="badge bg-dark rounded-pill">10</span>
+				</li>
+				<li class="list-group-item d-flex align-items-center justify-content-between">
+					<span>Others</span>
+				 	<span class="badge bg-dark rounded-pill">10</span>
+				</li>
+			</ul>
+		</div>
+		<div class="mt-2">
+			<button type="button" class="btn col-12 btn-green"><i class="fa-solid fa-screwdriver-wrench"></i> Account Settings</button>
+		</div>
+		<div class="mt-1">
+			<button type="button" class="btn col-12 btn-green"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</button>
+		</div>
+	</div>
+  <div class="col-lg-9">
+		<div class="row">
+			<div class="card">
+				<div class="card-body">
+					<form class="d-flex" role="search">
+						<input class="form-control" type="search" placeholder="Search your contact" aria-label="Search">
+					</form>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<div class="row d-flex align-items-center ">
+						<div class="col-lg-1">
+							<%= image_tag("avatar.jpeg", :size=>"50x50", :class=>"rounded")%>
+						</div>
+						<div class="col-lg-9">
+							<div class="p d-block">
+								<div class="d-flex align-items-center">
+									<span>Shimol Khan</span>
+									<span>
+										<i class="fa-solid fa-circle"></i>
+									</span>
+									<span class="ms-1 text-gray">Family</span>
+								</div>
+							</div>
+							<small class="text-semi-gray">dev.shimolkhan@gmail.com</small>
+						</div>
+						<div class="col-lg-2">
+							<div class="d-flex justify-content-end">
+								<span>
+									<%= link_to "", :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+										<i class="fa-solid fa-pencil"></i>
+									<% end %>
+								</span>
+								<span class="ms-2">
+									<%= link_to "", :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+										<i class="fa-solid fa-trash"></i>
+									<% end %>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<div class="row d-flex align-items-center ">
+						<div class="col-lg-1">
+							<%= image_tag("avatar.jpeg", :size=>"50x50", :class=>"rounded")%>
+						</div>
+						<div class="col-lg-9">
+							<div class="p d-block">
+								<div class="d-flex align-items-center">
+									<span>Shimol Khan</span>
+									<span>
+										<i class="fa-solid fa-circle"></i>
+									</span>
+									<span class="ms-1 text-gray">Family</span>
+								</div>
+							</div>
+							<small class="text-semi-gray">dev.shimolkhan@gmail.com</small>
+						</div>
+						<div class="col-lg-2">
+							<div class="d-flex justify-content-end">
+								<span>
+									<%= link_to "", :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+										<i class="fa-solid fa-pencil"></i>
+									<% end %>
+								</span>
+								<span class="ms-2">
+									<%= link_to "", :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+										<i class="fa-solid fa-trash"></i>
+									<% end %>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<div class="row d-flex align-items-center ">
+						<div class="col-lg-1">
+							<%= image_tag("avatar.jpeg", :size=>"50x50", :class=>"rounded")%>
+						</div>
+						<div class="col-lg-9">
+							<div class="p d-block">
+								<div class="d-flex align-items-center">
+									<span>Shimol Khan</span>
+									<span>
+										<i class="fa-solid fa-circle"></i>
+									</span>
+									<span class="ms-1 text-gray">Family</span>
+								</div>
+							</div>
+							<small class="text-semi-gray">dev.shimolkhan@gmail.com</small>
+						</div>
+						<div class="col-lg-2">
+							<div class="d-flex justify-content-end">
+								<span>
+									<%= link_to "", :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+										<i class="fa-solid fa-pencil"></i>
+									<% end %>
+								</span>
+								<span class="ms-2">
+									<%= link_to "", :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+										<i class="fa-solid fa-trash"></i>
+									<% end %>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<div class="row d-flex align-items-center ">
+						<div class="col-lg-1">
+							<%= image_tag("avatar.jpeg", :size=>"50x50", :class=>"rounded")%>
+						</div>
+						<div class="col-lg-9">
+							<div class="p d-block">
+								<div class="d-flex align-items-center">
+									<span>Shimol Khan</span>
+									<span>
+										<i class="fa-solid fa-circle"></i>
+									</span>
+									<span class="ms-1 text-gray">Family</span>
+								</div>
+							</div>
+							<small class="text-semi-gray">dev.shimolkhan@gmail.com</small>
+						</div>
+						<div class="col-lg-2">
+							<div class="d-flex justify-content-end">
+								<span>
+									<%= link_to "", :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+										<i class="fa-solid fa-pencil"></i>
+									<% end %>
+								</span>
+								<span class="ms-2">
+									<%= link_to "", :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+										<i class="fa-solid fa-trash"></i>
+									<% end %>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<div class="row d-flex align-items-center ">
+						<div class="col-lg-1">
+							<%= image_tag("avatar.jpeg", :size=>"50x50", :class=>"rounded")%>
+						</div>
+						<div class="col-lg-9">
+							<div class="p d-block">
+								<div class="d-flex align-items-center">
+									<span>Shimol Khan</span>
+									<span>
+										<i class="fa-solid fa-circle"></i>
+									</span>
+									<span class="ms-1 text-gray">Family</span>
+								</div>
+							</div>
+							<small class="text-semi-gray">dev.shimolkhan@gmail.com</small>
+						</div>
+						<div class="col-lg-2">
+							<div class="d-flex justify-content-end">
+								<span>
+									<%= link_to "", :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+										<i class="fa-solid fa-pencil"></i>
+									<% end %>
+								</span>
+								<span class="ms-2">
+									<%= link_to "", :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+										<i class="fa-solid fa-trash"></i>
+									<% end %>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<div class="row d-flex align-items-center ">
+						<div class="col-lg-1">
+							<%= image_tag("avatar.jpeg", :size=>"50x50", :class=>"rounded")%>
+						</div>
+						<div class="col-lg-9">
+							<div class="p d-block">
+								<div class="d-flex align-items-center">
+									<span>Shimol Khan</span>
+									<span>
+										<i class="fa-solid fa-circle"></i>
+									</span>
+									<span class="ms-1 text-gray">Family</span>
+								</div>
+							</div>
+							<small class="text-semi-gray">dev.shimolkhan@gmail.com</small>
+						</div>
+						<div class="col-lg-2">
+							<div class="d-flex justify-content-end">
+								<span>
+									<%= link_to "", :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+										<i class="fa-solid fa-pencil"></i>
+									<% end %>
+								</span>
+								<span class="ms-2">
+									<%= link_to "", :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+										<i class="fa-solid fa-trash"></i>
+									<% end %>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

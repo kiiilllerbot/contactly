@@ -1,0 +1,100 @@
+@import "colors";
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+html,
+body {
+  margin-top: 75px;
+}
+body {
+  background-color: $color-light-dark !important;
+  color: $color-gray !important;
+}
+
+.navbar {
+  border-bottom: 0.5px solid $color-lighter-dark;
+  margin: 0px 25px;
+}
+
+.nav.navbar-nav li a {
+  color: $color-gray !important;
+}
+
+.navbar-brand {
+  color: $color-gray !important;
+  font-family: "Lobster", cursive;
+}
+
+.btn-green {
+  background-color: $color-green !important;
+  color: $color-light-dark !important;
+  border: none !important;
+}
+.btn-green:hover {
+  color: $color-gray !important;
+  transition: ease 0.5s;
+}
+
+.mx-45 {
+  margin: 0px 45px;
+}
+
+.card {
+  background-color: $color-semi-lighter-dark !important;
+  .list-group-item {
+    background-color: $color-light-green !important;
+  }
+}
+
+.fa-circle {
+  color: $color-green !important;
+  //font-size: 10px;
+  margin-left: 10px;
+}
+
+.text-gray {
+  color: $color-lighter-dark !important;
+}
+
+.text-semi-gray {
+  color: $color-semi-gray;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  font-size: 8px;
+  text-align: center;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  //border-color: rgba(126, 239, 104, 0.8);
+  border-color: $color-green;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+    0 0 8px rgba(126, 239, 104, 0.6);
+  outline: 0 none;
+}
+
+.bg-dark {
+  background-color: $color-lighter-dark !important;
+}
+
+.form-control:valid {
+  background-color: $color-gray !important;
+}
