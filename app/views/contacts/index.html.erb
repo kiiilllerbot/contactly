@@ -5,26 +5,12 @@
 				Featured
 			</div>
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item d-flex align-items-center justify-content-between">
-					<span>Family</span>
-				 	<span class="badge bg-dark rounded-pill">10</span>
-				</li>
-				<li class="list-group-item d-flex align-items-center justify-content-between">
-					<span>Friends</span>
-				 	<span class="badge bg-dark rounded-pill">10</span>
-				</li>
-				<li class="list-group-item d-flex align-items-center justify-content-between">
-					<span>Clients</span>
-				 	<span class="badge bg-dark rounded-pill">10</span>
-				</li>
-				<li class="list-group-item d-flex align-items-center justify-content-between">
-					<span>Collegues</span>
-				 	<span class="badge bg-dark rounded-pill">10</span>
-				</li>
-				<li class="list-group-item d-flex align-items-center justify-content-between">
-					<span>Others</span>
-				 	<span class="badge bg-dark rounded-pill">10</span>
-				</li>
+				<% @groups.each do |group| %>
+					<li class="list-group-item d-flex align-items-center justify-content-between">
+						<span><%= group.name %></span>
+						<span class="badge bg-dark rounded-pill"><%= group.contacts.count %></span>
+					</li>
+				<% end %>
 			</ul>
 		</div>
 		<div class="mt-2">
