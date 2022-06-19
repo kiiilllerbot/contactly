@@ -6,4 +6,9 @@ class Contact < ApplicationRecord
     validates_presence_of :company
     validates_presence_of :phone
     validates_presence_of :address
+
+    def gravatar
+        hash = Digest::MD5.hexdigest(email.downcase)
+        "https://www.gravatar.com/avatar/#{hash}"
+    end
 end
