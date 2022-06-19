@@ -1,6 +1,8 @@
 class Contact < ApplicationRecord
     belongs_to :group
 
+    paginates_per 10
+
     validates_presence_of :name
     validates_presence_of :email
     validates_presence_of :company

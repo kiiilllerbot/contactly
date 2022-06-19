@@ -20,7 +20,7 @@ body {
 }
 
 .navbar-brand {
-  color: $color-gray !important;
+  color: $color-green !important;
   font-family: "Lobster", cursive;
 }
 
@@ -97,4 +97,9 @@ input[type="color"]:focus,
 
 .form-control:valid {
   background-color: $color-gray !important;
+}
+
+.fixed-top.scrolled {
+  background-color: #fff !important;
+  transition: background-color 200ms linear;
 }
