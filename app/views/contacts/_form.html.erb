@@ -1,0 +1,50 @@
+<%= form_for @contact do |f| %>
+
+    <% if @contact.errors.any? %>
+        <h4><%= @contact.errors.count %> Errors Are Preventing The Form To Be Saved.</h4>
+        <% @contact.errors.full_messages.each do |msg| %>
+            <span><%= msg %></span><br>
+        <% end %>
+        <hr>
+    <div>
+    
+    </div>
+    <% end %>
+
+    <div class="form-group">
+        <%= f.label :name %><br/>
+        <%= f.text_field :name, :class=>"form-control"%>
+    </div>
+    <div class="form-group mt-2">
+        <%= f.label :email %><br/>
+        <%= f.text_field :email, :class=>"form-control" %>
+    </div>
+    <div class="form-group mt-2">
+        <%= f.label :company %><br/>
+        <%= f.text_field :company, :class=>"form-control" %>
+    </div>
+    <div class="form-group mt-2">
+        <%= f.label :phone %><br/>
+        <%= f.text_field :phone, :class=>"form-control" %>
+    </div>
+    <div class="form-group mt-2">
+        <%= f.label :address %><br/>
+        <%= f.text_field :address, :class=>"form-control" %>
+    </div>
+    <div class="row">
+        <div class="col-lg-10">
+            <div class="form-group mt-2">
+                <%= f.collection_select( :group_id, Group.all, :id,:name,{include_blank: false}, {class: 'form-control'})%>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <%= link_to "Add Group", "#", id: "add-group-btn", class: "btn btn-primary mt-2 col-12"%>
+        </div>
+    </div>
+    <div class="form-group mt-2">
+        <input type="text" class="form-control" placeholder="Group Name" id="add-group-input">
+    </div>
+    <div class="form-group mt-2">
+        <%= f.submit "Save", :class=>"btn btn-primary col-12" %>
+    </div>
+<% end %>
