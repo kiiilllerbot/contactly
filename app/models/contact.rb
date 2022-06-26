@@ -1,4 +1,5 @@
 class Contact < ApplicationRecord
+    has_one_attached :avatar
     belongs_to :group
 
     paginates_per 10

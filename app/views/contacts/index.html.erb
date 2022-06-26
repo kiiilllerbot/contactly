@@ -36,7 +36,11 @@
 					<div class="card-body">
 						<div class="row d-flex align-items-center ">
 							<div class="col-lg-1">
-								<%= image_tag(contact.gravatar, :size=>"50x50", :class=>"rounded")%>
+								<% if contact.avatar.attached? %>
+									<%= image_tag(contact.avatar, :size=>"50x50", :class=>"rounded")%>
+								<% else %>
+									<%= image_tag(contact.gravatar, :size=>"50x50", :class=>"rounded")%>
+								<% end %>
 							</div>
 							<div class="col-lg-9">
 								<div class="p d-block">

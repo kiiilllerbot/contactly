@@ -1,4 +1,4 @@
-<%= form_for @contact do |f| %>
+<%= form_for @contact, html: {multipart: true} do |f| %>
 
     <% if @contact.errors.any? %>
         <h4><%= @contact.errors.count %> Errors Are Preventing The Form To Be Saved.</h4>
@@ -12,6 +12,12 @@
     <% end %>
 
     <div class="form-group">
+        <div class="text-center mb-2">
+            <%= image_tag(url_for(@contact.avatar),:class=>"rounded-circle", :size=>"120x120") if @contact.avatar.attached? %>
+        </div>
+        <%= f.file_field :avatar, :class=>"form-control"%>
+    </div>
+    <div class="form-group mt-2">
         <%= f.label :name %><br/>
         <%= f.text_field :name, :class=>"form-control"%>
     </div>
