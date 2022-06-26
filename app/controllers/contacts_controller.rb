@@ -1,10 +1,9 @@
 class ContactsController < ApplicationController
+  before_action :find_contact, only: [:edit, :update, :destroy]
+
   def index
-    if params[:group_id] && !params[:group_id].empty?
-      @contacts = Contact.where(group_id: params[:group_id]).page(params[:page])
-    else
-      @contacts = Contact.order('created_at DESC').page(params[:page])
-    end
+    session[:selected_group_id] = params[:group_id]
+    @contacts = Contact.by_group(params[:group_id]).search(params[:term]).order(created_at: :desc).page(params[:page])
     @groups = Group.all
   end
 
@@ -23,11 +22,9 @@ class ContactsController < ApplicationController
   end
 
   def edit
-    @contact = Contact.find(params[:id])
   end
 
   def update
-    @contact = Contact.find(params[:id])
     if @contact.update(contact_params)
       flash[:success] = "Contact updated successfully."
       redirect_to contacts_path
@@ -37,7 +34,6 @@ class ContactsController < ApplicationController
   end
 
   def destroy
-    @contact = Contact.find(params[:id])
     @contact.destroy
     flash[:danger] = "Contact deleted successfully."
     redirect_to contacts_path
@@ -46,5 +42,9 @@ class ContactsController < ApplicationController
   private
   def contact_params
     params.require(:contact).permit(:group_id, :name, :email, :company, :phone, :address, :avatar)
+  end
+
+  def find_contact
+    @contact = Contact.find(params[:id])
   end
 end
