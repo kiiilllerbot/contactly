@@ -36,6 +36,13 @@ class ContactsController < ApplicationController
     end
   end
 
+  def destroy
+    @contact = Contact.find(params[:id])
+    @contact.destroy
+    flash[:danger] = "Contact deleted successfully."
+    redirect_to contacts_path
+  end
+
   private
   def contact_params
     params.require(:contact).permit(:group_id, :name, :email, :company, :phone, :address, :avatar)

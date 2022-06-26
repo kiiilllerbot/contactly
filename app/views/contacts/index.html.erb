@@ -62,7 +62,7 @@
 										<% end %>
 									</span>
 									<span class="ms-2">
-										<%= link_to "", :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+										<%= link_to contact_path(contact), method: :delete, data:{confirm: "Are you sure?"}, :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
 											<i class="fa-solid fa-trash"></i>
 										<% end %>
 									</span>
