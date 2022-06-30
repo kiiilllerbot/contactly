@@ -9,23 +9,25 @@
 //= require turbolinks
 //= require_tree .
 
-$(function () {
-  $(document).scroll(function () {
-    var $nav = $(".fixed-top");
-    $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+$(document).on("turbolinks:load", function () {
+  $(function () {
+    $(document).scroll(function () {
+      var $nav = $(".fixed-top");
+      $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+    });
   });
-});
 
-// Autocomplete
-$(function () {
-  // Form id is term
-  $("#term").autocomplete({
-    source: "/contacts/autocomplete",
-    minLength: 3,
-    select: function (event, ui) {
-      $("#term").val(ui.item.value);
-      // Click on autocomplete to select the matching suggestion
-      $(this).closest("form").submit();
-    },
+  // Autocomplete
+  $(function () {
+    // Form id is term
+    $("#term").autocomplete({
+      source: "/contacts/autocomplete",
+      minLength: 3,
+      select: function (event, ui) {
+        $("#term").val(ui.item.value);
+        // Click on autocomplete to select the matching suggestion
+        $(this).closest("form").submit();
+      },
+    });
   });
 });

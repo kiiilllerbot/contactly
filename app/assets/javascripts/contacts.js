@@ -16,8 +16,19 @@ $(document).on("turbolinks:load", function () {
       data: {
         group: { name: $("#new_group").val() },
       },
-      success: function (response) {
-        console.log(response);
+      success: function (group) {
+        if (group.id != null) {
+          const newOption = $("<option/>")
+            .attr("value", group.id)
+            .attr("selected", true)
+            .text(group.name);
+
+          // Append the new group to the select tag
+          $("#contact_group_id").append(newOption);
+
+          // Clear out the New Group Form Input
+          newGroup.val("");
+        }
       },
       error: function (xhr) {
         console.log(xhr);
