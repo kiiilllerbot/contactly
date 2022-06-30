@@ -1,5 +1,6 @@
 //= require jquery3
 //= require rails-ujs
+//= require jquery-ui
 //= require activestorage
 //= require turbolinks
 //= require_tree .
@@ -16,5 +17,17 @@ $(function () {
   // Toggle the input form by clicking
   $("#add-group-btn").click(function () {
     $("#add-group-input").toggle();
+  });
+});
+
+// Autocomplete
+$(function () {
+  // Form id is term
+  $("#term").autocomplete({
+    source: "/contacts/autocomplete",
+    minLength: 3,
+    select: function (event, ui) {
+      $("#term").val(ui.item.value);
+    },
   });
 });

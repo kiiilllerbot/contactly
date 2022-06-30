@@ -58,3 +58,4 @@ gem 'faker', '~> 2.21'
 gem 'jquery-rails', '~> 4.5'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
 gem "image_processing", ">= 1.2"
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'

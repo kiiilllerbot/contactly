@@ -7,6 +7,11 @@ class ContactsController < ApplicationController
     @groups = Group.all
   end
 
+  def autocomplete
+    @contacts = Contact.search(params[:term]).order(created_at: :desc).page(params[:page])
+    render json: @contacts.map { |contact| { id: contact.id, value: contact.name } }
+  end
+
   def new
     @contact = Contact.new
   end
