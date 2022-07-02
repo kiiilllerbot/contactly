@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+    before_action :authenticate_user!
     def create
         #render json: "Groups#create in Action."
         @group = Group.new(group_params)
