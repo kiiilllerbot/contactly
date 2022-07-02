@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   get 'dashboard/index'
   get 'home/index'
-  devise_for :users
 
   devise_scope :user do
     get '/users', to: 'devise/registrations#new'
     get '/users/password', to: 'devise/passwords#new'
+    get 'login', to: 'devise/session#new'
+    get 'register', to: 'devise/registrations#new'
   end
+
+  devise_for :users, path: 'auth',controllers: {registrations: :custom_registrations}, path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
 
   root to: 'home#index'
 
