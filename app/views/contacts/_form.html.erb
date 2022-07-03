@@ -1,16 +1,5 @@
 <%= form_for @contact, html: {multipart: true} do |f| %>
 
-    <% if @contact.errors.any? %>
-        <h4><%= @contact.errors.count %> Errors Are Preventing The Form To Be Saved.</h4>
-        <% @contact.errors.full_messages.each do |msg| %>
-            <span><%= msg %></span><br>
-        <% end %>
-        <hr>
-    <div>
-    
-    </div>
-    <% end %>
-
     <div class="form-group">
         <div class="text-center mb-2">
             <%= image_tag(url_for(@contact.avatar),:class=>"rounded-circle", :size=>"120x120") if @contact.avatar.attached? %>
@@ -18,26 +7,52 @@
         <%= f.file_field :avatar, :class=>"form-control"%>
     </div>
     <div class="form-group mt-2">
-        <%= f.label :name %><br/>
+        <%= f.label :name %>
         <%= f.text_field :name, :class=>"form-control"%>
+        <% if has_error?(@contact, :name) %>
+            <span class="help-block">
+                <%= get_error(@contact, :name) %>
+            </span>
+        <% end %>
     </div>
     <div class="form-group mt-2">
-        <%= f.label :email %><br/>
+        <%= f.label :email %>
         <%= f.text_field :email, :class=>"form-control" %>
+        <% if has_error?(@contact, :email) %>
+            <span class="help-block">
+                <%= get_error(@contact, :email) %>
+            </span>
+        <% end %>
     </div>
     <div class="form-group mt-2">
-        <%= f.label :company %><br/>
+        <%= f.label :company %>
         <%= f.text_field :company, :class=>"form-control" %>
+        <% if has_error?(@contact, :company) %>
+            <span class="help-block">
+                <%= get_error(@contact, :company) %>
+            </span>
+        <% end %>
     </div>
     <div class="form-group mt-2">
-        <%= f.label :phone %><br/>
+        <%= f.label :phone %>
         <%= f.text_field :phone, :class=>"form-control" %>
+        <% if has_error?(@contact, :phone) %>
+            <span class="help-block">
+                <%= get_error(@contact, :phone) %>
+            </span>
+        <% end %>
     </div>
     <div class="form-group mt-2">
-        <%= f.label :address %><br/>
+        <%= f.label :address %>
         <%= f.text_field :address, :class=>"form-control" %>
+        <% if has_error?(@contact, :address) %>
+            <span class="help-block">
+                <%= get_error(@contact, :address) %>
+            </span>
+        <% end %>
     </div>
-    <div class="row">
+    <div class="row mt-2">
+        <label for="">Select Group</label>
         <div class="col-lg-10">
             <div class="form-group mt-2">
                 <% attr = {prompt: "Select group"}%>
@@ -48,6 +63,11 @@
         <div class="col-lg-2">
             <%= link_to "Add Group", "#", id: "add-group-btn", class: "btn btn-primary mt-2 col-12"%>
         </div>
+        <% if has_error?(@contact, :group) %>
+            <span class="help-block">
+                <%= get_error(@contact, :group) %>
+            </span>
+        <% end %>
     </div>
     <div class="row" id="add-new-group">
         <div class="col-lg-10">
