@@ -27,9 +27,14 @@ class ContactsController < ApplicationController
   end
 
   def edit
+    # Pundit Authorization
+    authorize @contact
   end
 
   def update
+    # Pundit Authorization
+    authorize @contact
+
     if @contact.update(contact_params)
       flash[:success] = "Contact updated successfully."
       redirect_to contacts_path
@@ -39,6 +44,9 @@ class ContactsController < ApplicationController
   end
 
   def destroy
+    # Pundit Authorization
+    authorize @contact
+    
     @contact.destroy
     flash[:danger] = "Contact deleted successfully."
     redirect_to contacts_path
