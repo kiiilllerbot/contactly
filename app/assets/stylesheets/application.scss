@@ -1,5 +1,6 @@
 @import "jquery-ui/autocomplete";
 @import "jquery-ui/menu";
+@import "toastr";
 @import "colors";
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
@@ -108,4 +109,20 @@ input[type="color"]:focus,
 
 .help-block {
   color: red;
+}
+
+.toast-error {
+  background-color: #ef5350 !important;
+}
+
+.toast-success {
+  background-color: $color-green !important;
+}
+
+.toast-info {
+  background-color: #b2ebf2 !important;
+}
+
+.toast-warning {
+  background-color: #ffea00 !important;
 }

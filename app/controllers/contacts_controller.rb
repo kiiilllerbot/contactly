@@ -22,6 +22,7 @@ class ContactsController < ApplicationController
       flash[:success] = "Contact created successfully."
       redirect_to contacts_path
     else
+      flash[:error] = "Contact couldn't be created."
       render :new
     end
   end
@@ -39,6 +40,7 @@ class ContactsController < ApplicationController
       flash[:success] = "Contact updated successfully."
       redirect_to contacts_path
     else
+      flash[:error] = "Contact couldn't be updated."
       render :edit
     end
   end
@@ -48,7 +50,7 @@ class ContactsController < ApplicationController
     authorize @contact
     
     @contact.destroy
-    flash[:danger] = "Contact deleted successfully."
+    flash[:success] = "Contact deleted successfully."
     redirect_to contacts_path
   end
 

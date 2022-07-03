@@ -61,3 +61,4 @@ gem "image_processing", ">= 1.2"
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'pundit', '~> 2.2'
+gem 'toastr-rails', '~> 1.0', '>= 1.0.3'
