@@ -17,6 +17,13 @@ $(document).on("turbolinks:load", function () {
     });
   });
 
+  // Fancy Alert
+  setTimeout(function () {
+    $("#notice-wrapper").fadeOut("fast", function () {
+      $(this).remove();
+    });
+  }, 2500);
+
   // Autocomplete
   $(function () {
     // Form id is term
