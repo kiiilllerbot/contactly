@@ -4,9 +4,9 @@
 			<ul class="list-group list-group-flush">
 				<% active = params[:group_id] == nil || params[:group_id].empty? ? 'active' : '' %>
 					<%= link_to contacts_path, :class=>"list-group-item d-flex align-items-center justify-content-between #{active}" do %>
-						All Contact <span class="badge bg-dark rounded-pill"><%= Contact.count %></span>
+						All Contact <span class="badge bg-dark rounded-pill"><%= current_user.contacts.count %></span>
 					<% end %>
-				<% @groups.each do |group| %>
+				<% current_user.groups.each do |group| %>
 					<% active = params[:group_id].to_i == group.id ? 'active' : ''%>
 					<%= link_to contacts_path(group_id: group.id), :class=>"list-group-item d-flex align-items-center justify-content-between #{active}" do %>
 						<span><%= group.name %></span>
