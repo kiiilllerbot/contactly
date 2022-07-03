@@ -3,15 +3,11 @@
         <div class="col-lg-6">
         <% if flash[:alert] %>
             <div id="notice-wrapper">
-                <div class="alert alert-primary"><%= alert %></div>
+                <div class="alert alert-danger"><%= alert %></div>
             </div>
         <% elsif flash[:notice] %>
             <div id="notice-wrapper">
                 <div class="alert alert-primary"><%= notice %></div>
-            </div>
-        <% elsif flash[:error] %>
-            <div id="notice-wrapper">
-                <div class="alert alert-danger"><%= error %></div>
             </div>
         <% end %>
         </div>
