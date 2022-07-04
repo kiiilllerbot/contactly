@@ -18,6 +18,17 @@ $(document).on("turbolinks:load", function () {
     });
   });
 
+  $(function () {
+    // PushState To Update The URL During Paginating The Page
+    $(document).on("click", ".pagination a[data-remote=true]", function () {
+      history.pushState({}, "", $(this).attr("href"));
+    });
+
+    $(window).on("popstate", function () {
+      $.get(document.location.href);
+    });
+  });
+
   // Fancy Alert
   setTimeout(function () {
     $("#notice-wrapper").fadeOut("fast", function () {
@@ -58,3 +69,7 @@ toastr.options = {
   showMethod: "fadeIn",
   hideMethod: "fadeOut",
 };
+
+$(document).on("click", ".pagination a[data-remote=true]", function () {
+  history.pushState({}, "", $(this).attr("href"));
+});
