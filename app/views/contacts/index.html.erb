@@ -1,19 +1,7 @@
 <div class="row justify-content-center mt-3">
   <div class="col-lg-3">
-		<div class="card">
-			<ul class="list-group list-group-flush">
-				<% active = params[:group_id] == nil || params[:group_id].empty? ? 'active' : '' %>
-					<%= link_to contacts_path, :class=>"list-group-item d-flex align-items-center justify-content-between #{active}" do %>
-						All Contact <span class="badge bg-dark rounded-pill"><%= current_user.contacts.count %></span>
-					<% end %>
-				<% current_user.groups.each do |group| %>
-					<% active = params[:group_id].to_i == group.id ? 'active' : ''%>
-					<%= link_to contacts_path(group_id: group.id), :class=>"list-group-item d-flex align-items-center justify-content-between #{active}" do %>
-						<span><%= group.name %></span>
-						<span class="badge bg-dark rounded-pill"><%= group.contacts.count %></span>
-					<% end %>
-				<% end %>
-			</ul>
+		<div class="card" id="sidebar">
+			<%= render "shared/sidebar" %>
 		</div>
 		<div class="mt-2">
 			<%= link_to edit_user_registration_path, :class=>"btn col-12 btn-green" do %>
