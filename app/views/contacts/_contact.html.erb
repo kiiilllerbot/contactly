@@ -1,0 +1,41 @@
+<% @contacts.each do |contact| %>
+				<div class="card">
+					<div class="card-body">
+						<div class="row d-flex align-items-center ">
+							<div class="col-lg-1">
+								<% if contact.avatar.attached? %>
+									<%= image_tag(contact.avatar, :size=>"50x50", :class=>"rounded")%>
+								<% else %>
+									<%= image_tag(contact.gravatar, :size=>"50x50", :class=>"rounded")%>
+								<% end %>
+							</div>
+							<div class="col-lg-9">
+								<div class="p d-block">
+									<div class="d-flex align-items-center">
+										<span><%= contact.name %></span>
+										<span>
+											<i class="fa-solid fa-circle"></i>
+										</span>
+										<span class="ms-1 text-gray"><%= contact.group.name %></span>
+									</div>
+								</div>
+								<small class="text-semi-gray"><%= contact.email %></small>
+							</div>
+							<div class="col-lg-2">
+								<div class="d-flex justify-content-end">
+									<span>
+										<%= link_to edit_contact_path(contact), :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+											<i class="fa-solid fa-pencil"></i>
+										<% end %>
+									</span>
+									<span class="ms-2">
+										<%= link_to contact_path(contact), method: :delete, data:{confirm: "Are you sure?"}, :class=>"btn btn-sm rounded-pill btn-circle btn-green" do %>
+											<i class="fa-solid fa-trash"></i>
+										<% end %>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>

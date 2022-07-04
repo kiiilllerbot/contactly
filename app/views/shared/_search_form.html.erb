@@ -1,0 +1,10 @@
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <%= form_tag(contacts_path, :class=>"d-flex", :role=>"search", method: :get, remote: true) do %>
+              <%= text_field_tag :term, params[:term], :class=>"form-control me-2"%>
+              <button class="btn btn-outline-success me-3" type="submit">Search</button>
+            <% end %>
+            <%= link_to new_contact_path, :class=>"btn btn-green" do %>
+              <i class="fa-solid fa-plus"></i> New Contact
+            <% end %>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, :class=>"btn btn-danger ms-1"%>
+        </ul>
